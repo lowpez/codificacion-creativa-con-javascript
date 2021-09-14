@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Arrays</title>
+
+</head>
+
+<body>
+	  <h1>Arrays</h1>
+    <p>Las matrices(arrays) son listas.</p>
+<canvas width="600" height="600"></canvas>
+ <script>
+ 	//Ejemplos
+ 	let years = [];
+ 	let menu = ['starter','main','dessert','drinks'];
+
+	/*Y si quisieramos acceder a alguno de los elementos en la lista?.
+	Para eso necesitaremos Bucles(Loops)*/
+
+	/*Los bucles son fragmentos de codigo que se ejecutan una y otra vez durante
+	un numero limitado de veces.*/
+
+	/*Algunos ejemplos de Bucles en Javascript*/
+
+	/*Dentro del parentesis irá una expresion para controlar el ciclo,
+	que se compone de 3 partes
+
+	En la primera parte declaramos que una variable es el índice de un bucle (i = 0).
+	La segunda parte es la duración del loop o cuántas veces queremos se ejecute (i < 4).
+	Podemos esto mas dinamico con i < menu.length asi cuente automaticamente hasta el final.
+	Y la tercera parte es lo que queremos hacer con i en cada iteración de loop: incrementar en 1 (i+=1 o i++).
+
+	Con esto decimos que comenzamos en 0 y luego ejecutamos algo.
+	Luego comenzamos con 1 y ejecutamos algo, asi hasta llegar a 4,
+	que será cuando saltemos del bucle y continuemos con el resto del codigo.
+
+	*/
+
+	for(let i = 0; i < 4; i++){
+		/*Aquí va el codigo que queremos correr varias veces*/
+		/*Podemos acceder a los elementos de la matriz escribiendo menu[i].
+		Logeamos los valores c/vez que se ejecutan con  */
+		console.log(menu[i]); //Aquí i está cambiando su valor de 0 a 1, en 2 y luego a 3 
+		/**/
+	}
+
+	/*Los bucles no son solo para leer valores de una matriz.
+	También podemos usarlos para escribir matrices*/
+
+	for(let i = 0; i < 10; i++){
+		years.push(2040 + i);
+	}
+
+	console.log(years);
+
+	/*Un ejemplo y buen candidato a uso intenso de variables seria este, 
+	usando una fila de 5 cuadros */
+
+	/*let canvas = document.querySelector('canvas');
+	let context = canvas.getContext('2d');
+
+	for(let i = 0; i < 5; i++){
+		let width = 60;
+		let height = 60;
+		let gap = 20;
+		let x = 100 + (width + gap) * i;
+		let y = 100;
+
+		context.beginPath();
+		context.rect(100 + 60 * i,100,60,60);
+		context.stroke();
+	}*/
+
+	/* Y si quisieramos mas filas?. Aqui requeriremos un loop anidado (nested loop).
+	Y tambien requeriremos un nuevo indice que usará la letra: j */
+
+	let canvas = document.querySelector('canvas');
+	let context = canvas.getContext('2d');
+
+	// Todo lo escrito en este loop se ejecutara 25 veces
+	for(let i = 0; i < 5; i++){
+		for(let j = 0; j < 5; j++){
+			let width = 60;
+			let height = 60;
+			let gap = 20;
+			let x = 100 + (width + gap) * i;
+			let y = 100 + (height + gap) * j;
+
+			context.beginPath();
+			context.rect(x, y , width, height);
+			context.stroke();
+
+	// Tambien podremos añadir otras formas
+			context.beginPath();
+			context.rect(x + 8, y + 8, width - 16, height - 16);
+			context.stroke();
+			//context.strokeStyle = 'blue';
+		}
+	}
+
+	/* Mas tipos de Loops: foreach 
+	Con el podremos repasar cada uno de los elementos/items */
+
+	menu.forEach(item => {
+		console.log(item);
+	});
+
+ </script>
+  
+</body>
+</html>
