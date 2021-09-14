@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Funciones</title>
+
+</head>
+
+<body>
+
+  <h1>Funciones</h1>
+    <p>Las variables por si solas no hacen mucho, es por esto que debemos hablar de <b>funciones.</b><br />Una funcion es simplemente un bloque de codigo que realiza / ejecuta una tarea / acción.</p>
+<!--<canvas width="600" height="600"></canvas>-->
+ <script>
+  let dinner = "Pasta"
+  let sentence = "Tonight, dinner will be " + dinner;
+  /* () = Estos parentesis significan acción*/
+  /* Así declaramos una funcion : function saySomething(){ } */
+  function saySomething(param){
+  /* Y si, está bien usar una funcion dentro de otra*/
+    console.log(sentence);
+
+  }
+
+  saySomething(sentence);
+
+  /*Ejemplo 2: Usando mas parametros*/
+  function add(a,b){
+  /*Si queremos que una funcion realice una tarea y tambien devuelva el valor en un resultado, 
+  necesitamos agregar la palabra return*/
+    return a + b;
+  }
+
+  let result = add(5,7);
+  console.log(result);
+
+  /*Ejemplo 3: Otra forma de escribir funciones. Es posible la veamos con mas frecuencia que con la palabra function, y esta es usando la flecha => asi : let multiply = () => {}
+  */
+
+  let multiply = (a,b) => {
+    return a * b;
+  }
+
+  //Ya no necesitamos almacenar el resultado en una variable. Podemos registrar la llamada directamente
+  console.log(multiply(5,7));
+ </script>
+  
+</body>
+</html>

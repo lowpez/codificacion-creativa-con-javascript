@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dibujando con Codigo : Canvas</title>
+
+</head>
+
+<body>
+
+  <h1>Canvas: Metodos y Contexto</h1>
+
+<canvas width="600" height="600"></canvas>
+
+ <script>
+  /*Necesitamos una variable para hacer referencia a nuestro elemento canvas aquí*/
+  let canvas = document.querySelector('canvas');
+  /* document es un objeto javascript para hacer referencia a este documento HTML. El punto indica que queremos sea parte de ese objeto, en este caso una funcion llamada querySelector*/
+  let context = canvas.getContext('2d');
+  /* Esta var es una referencia al contexto del canvas, que es donde haremos el dibujo en 2D o 3D */
+  context.fillStyle = 'blue';
+  /*fillStyle es una propiedad, y una propiedad es una variable que forma parte del objeto*/
+
+  //context.fillRect(100,100,400,400);
+  
+  /* fillRect() es una funcion que toma 4 parámetros: x, y, ancho y alto, siendo X e Y margenes. 
+  El codigo previo es un atajo en realidad.*/
+
+  context.lineWidth = 4;
+
+  /*Si queremos tener mas control, lo primero que deberemos hacer es decirle al contexto que comenzamos una nueva forma o camino*/
+  context.beginPath();
+
+  /*Ejemplo: Si queremos dibujar un rectangulo son rellenarlo*/
+  context.rect(100,100,400,400);
+  context.stroke();
+
+  /*Dibujemos una forma diferente: Un Circulo*/
+
+  context.beginPath();
+  /*arc es el metodo para dibujar un circulo. Arc maneja 6 parametros, siendo 5 obligatorios: x,y,radio,angulo inicial y angulo final.*/
+  context.arc(300,300,100,0, Math.PI * 2);
+  context.stroke();
+ 
+ </script>
+  
+</body>
+</html>
