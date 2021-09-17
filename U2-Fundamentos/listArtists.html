@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Artists List</title>
+
+</head>
+
+<body>
+
+  <h1>Artists List</h1>
+
+ <script>
+  let artists = ['Walker Brothers','St. Christopher','R.E.M','Santos Dummont','My Bloody Valentine','Solar'];
+  
+  function listArtists(element, i, artists) {
+    console.log("artists[" + i + "] = " + element);
+    document.write("artists[" + i + "] = " + element);
+  }
+  
+  artists.forEach(listArtists);
+
+ </script>
+  
+</body>
+</html>
